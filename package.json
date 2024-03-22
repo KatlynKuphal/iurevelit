@@ -1,0 +1,45 @@
+{
+  "name": "iurevelit",
+  "version": "1.0.0",
+  "description": "Pure JavaScript RAR archive extractor by compile the official unrar lib by Emscripten.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KatlynKuphal/iurevelit.git"
+  },
+  "main": "./dist/index.js",
+  "module": "./esm/index.esm.js",
+  "keywords": [
+    "sunt"
+  ],
+  "author": "HalWeimann",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mocha": "^8.2.0",
+    "@types/shelljs": "^0.8.8",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "mocha": "^8.2.1",
+    "prettier": "^2.2.1",
+    "shelljs": "^0.8.4",
+    "typescript": "^4.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint"
+    }
+  },
+  "lint-staged": {
+    "*.{json,md,less,yaml,yml}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix --max-warnings 0"
+    ]
+  }
+}
